@@ -1,10 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const ForexPage = ({ pageContext }) => {
   const { date, rates, prevDate, nextDate } = pageContext;
 
   return (
     <div className="container mx-auto py-6">
+      {/* Dynamic Page Title */}
+      <Helmet>
+        <title>VN FOREX | {date}</title>
+      </Helmet>
       <h1 className="text-2xl font-bold mb-4">Forex Rates for {date}</h1>
       <table className="min-w-full table-auto border-collapse border">
         <thead>
