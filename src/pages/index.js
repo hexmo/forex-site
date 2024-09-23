@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import forexData from '../data/forex_data.json';
+import { Helmet } from 'react-helmet';
 
 const HomePage = () => {
   // Reverse the data to show latest dates first
@@ -8,6 +9,10 @@ const HomePage = () => {
 
   return (
     <div className="container mx-auto py-6">
+      <Helmet>
+        <title>VN FOREX</title>
+        <link rel="icon" href="/favicon.png" />
+      </Helmet>
       <h1 className="text-2xl font-bold mb-4">Forex Rates</h1>
       <ul className="list-disc pl-5">
         {sortedForexData.map((data) => (
